@@ -8,7 +8,7 @@
 
 import UIKit
 
-// why plut 0.5???
+// why plus 0.5???
 // pixel & point
 // when trigger draw(_)
 // context and draw(_)

@@ -15,6 +15,7 @@
 		5A901DAA1F5EB6950089E3A4 /* FloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A901DA91F5EB6950089E3A4 /* FloTests.swift */; };
 		5A901DB51F5EB70D0089E3A4 /* PushButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A901DB41F5EB70D0089E3A4 /* PushButtonView.swift */; };
 		5A901DB71F5EE22E0089E3A4 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A901DB61F5EE22E0089E3A4 /* CounterView.swift */; };
+		5A901DB91F5F02CE0089E3A4 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A901DB81F5F02CE0089E3A4 /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		5A901DAB1F5EB6950089E3A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A901DB41F5EB70D0089E3A4 /* PushButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonView.swift; sourceTree = "<group>"; };
 		5A901DB61F5EE22E0089E3A4 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		5A901DB81F5F02CE0089E3A4 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				5A901DB41F5EB70D0089E3A4 /* PushButtonView.swift */,
 				5A901D961F5EB6940089E3A4 /* ViewController.swift */,
 				5A901DB61F5EE22E0089E3A4 /* CounterView.swift */,
+				5A901DB81F5F02CE0089E3A4 /* GraphView.swift */,
 				5A901D981F5EB6940089E3A4 /* Main.storyboard */,
 				5A901D9B1F5EB6940089E3A4 /* Assets.xcassets */,
 				5A901D9D1F5EB6940089E3A4 /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A901DB91F5F02CE0089E3A4 /* GraphView.swift in Sources */,
 				5A901D971F5EB6940089E3A4 /* ViewController.swift in Sources */,
 				5A901DB51F5EB70D0089E3A4 /* PushButtonView.swift in Sources */,
 				5A901D951F5EB6940089E3A4 /* AppDelegate.swift in Sources */,
