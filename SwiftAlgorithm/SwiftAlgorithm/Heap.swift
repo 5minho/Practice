@@ -71,6 +71,10 @@ public struct Heap<T> {
         
     }
     
+    public func peek() -> T? {
+        return elements.first
+    }
+    
     public mutating func replace (_ index : Int, value : T) {
         
         guard index < elements.count else {
@@ -173,5 +177,42 @@ public struct Heap<T> {
         
     }
     
+}
+
+extension Heap where T : Equatable {
+    
+    /// heap 에서 주어진 element 의 index 검색
+    ///
+    /// - Parameter element: 찾고자 하는 element
+    /// - Returns: element의 위치
+    public func index(of element: T) -> Int? {
+        return index(of: element, 0)
+    }
+    
+    public func index(of element: T, _ i : Int) -> Int? {
+        
+        guard i < elements.count else {
+            return nil
+        }
+        
+        if isOrderedBefore(element, elements[i]) {
+            return nil
+        }
+        
+        if elements[i] == element {
+            return i
+        }
+        
+        if let idx = index(of: element, leftChildIndex(of: i)) {
+            return idx
+        }
+        
+        if let idx = index(of: element, rightChildIndex(of: i)) {
+            return idx
+        }
+        
+        return nil
+        
+    }
     
 }

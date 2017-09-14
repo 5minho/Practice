@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A3406751F6A170E001229AD /* PriotityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3406741F6A170E001229AD /* PriotityQueue.swift */; };
 		5A63D5E21F68107D008167BC /* HeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A63D5E11F68107D008167BC /* HeapTests.swift */; };
 		5A63D5E81F6811F5008167BC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A63D5E71F6811F5008167BC /* main.swift */; };
 		5A63D5E91F681275008167BC /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CF6371F67CA9C00744FDA /* Heap.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		5A1B9A531F5BFAE3003B88A8 /* SwiftAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3406741F6A170E001229AD /* PriotityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriotityQueue.swift; sourceTree = "<group>"; };
 		5A63D5DF1F68107D008167BC /* HeapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A63D5E11F68107D008167BC /* HeapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
 		5A63D5E31F68107D008167BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				5A7CF6371F67CA9C00744FDA /* Heap.swift */,
 				5A63D5E71F6811F5008167BC /* main.swift */,
+				5A3406741F6A170E001229AD /* PriotityQueue.swift */,
 			);
 			path = SwiftAlgorithm;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				5A63D5E81F6811F5008167BC /* main.swift in Sources */,
 				5A7CF6381F67CA9C00744FDA /* Heap.swift in Sources */,
+				5A3406751F6A170E001229AD /* PriotityQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
