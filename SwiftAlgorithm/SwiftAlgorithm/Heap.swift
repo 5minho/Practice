@@ -71,6 +71,22 @@ public struct Heap<T> {
         
     }
     
+    public mutating func replace (_ index : Int, value : T) {
+        
+        guard index < elements.count else {
+            return
+        }
+        
+        if(isOrderedBefore(value, elements[index])) {
+            elements[index] = value
+            shiftUp(index)
+        } else {
+            elements[index] = value
+            shiftDown(index, heapSize: elements.count)
+        }
+        
+    }
+    
     mutating public func insert(_ value : T) {
     
         self.elements.append(value)
@@ -109,8 +125,8 @@ public struct Heap<T> {
         
         while childIndex > 0 && self.isOrderedBefore(child, elements[parentIndex]) {
             
-            childIndex = parentIndex
             elements[childIndex] = elements[parentIndex]
+            childIndex = parentIndex
             parentIndex = self.parentIndex(of: childIndex)
             
         }
