@@ -27,7 +27,21 @@ UIView 클래스는 직사각형 범위를 채우기 위해 backgroud color를 �
 
 뷰의 기하적인 특성은 frame, bounds, center 프로퍼티들에 의헤서 정해진다. frame은 superview의 좌표계 안에서 뷰의 원점과 크기를 정하고 일반적으로 layout 중에 뷰의 크기와 위치를 조절하는데 쓰인다. center 프로퍼티는 뷰의 크기를 변화하지 않고 뷰의 위치를 조정하는데 쓰인다. bounds는 뷰의 내부적인 위치와 크기를 정의 하며, 사용자가 뷰를 그리는 코드를 작성할때 거의 독점적으로 사용된다.
 
+
 자세한건 [View Programming Guide]( https://developer.apple.com/library/content/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html)봐라.
+
+
+##frame vs bounds
+우선 UIView의 두 단계 렌더링 프로세스를 이해해야함
+* Rasterization : 드로잉 연산들을 통해 이미지를 생성하는 것
+* Composition : 각각 View의 래스터화된 이미지를 뷰 계층 구조를 따라가면서 합친다. 결국 그 이미지를 우리가 보는 것
+결국 독립적인 이미지를 쌓아서 최종적인 이미지를 만들어 낸다 (마치 포토샵 같음)
+
+Rasterization 단계에 view는 Composition 단계에서 어떤 작업이 일어날지 신경쓰지 않고 단지 자신의 content를 그리기만 한다. (어디에 그려질지, 어떤 순서로 그려질지 모름) 이 그리는 작업은 view의 draw(:rect) 메서드에서 일어남
+
+draw 메서드가 호출되기 전에 view에 Rasterization의 결과물을 그리기 위해 빈 이미지가 생성되고 이 이미지는 view의 bounds rectangle 에 그려진다. bounds rectangle의 원점은 (0, 0) 이고 만약 이 rectangle 밖에 그리려고 한다면 그 이미지는 래스터화된 이미지의 일부분이 아니므로 무시된다.
+
+Composition 단계에 각 View는 Super View 이미지 위에 래스터화 된 이미지를 합성한다. View의 frame rectangle은 Super View의 이미지에서 뷰의 이미지가 그려지는 위치를 결정한다. frame rectangle의 원점은 View의 좌상단 코너와 super view 의 이미지의 오프셋이다. 따라서 만약 frame rectangle의 원점이 (x: 20, y: 15) 라면 view의 이미지는 Super View의 이미지 위에 오른쪽으로 20, 아래로 15 만큼 이동된 위치에 그려질 것이다. frame rectangle과 bounds rectangle의 크기는 같아서 래스터화된 이미지가 축소되거나 늘어나지 않는다.
 
 __Note__
 ```
