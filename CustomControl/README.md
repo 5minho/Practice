@@ -19,3 +19,7 @@
 * Core Animation 은 CALayer의 임의의 프로퍼티가 바뀌면 (transform 포함) 암시적으로 animation 을 한다.
 
 * keyframe animation 을 이용하면 시작, 끝 지점 뿐만 아니라 중간지점도 지정할 수 있다. 중간 지점들에 도달하는 속도를 CAMediaTimeingFunction 을 통해 지정할 수 있다.
+
+* 화면을 터치할때 iOS에서 적절한 객체로 UITouch 이벤트들을 전달하는데, 하나 이상의 gesture recognizer가 등록돼 있다면, 터치 이벤트는 gesture recognizer로 전달되어 어떤 터치 이벤트인지 해석된다. 또 action message도 target에 전달할 수도 있다. 커스텀할 컨트롤에 적절한 커스텀 gesture recognizer를 만들어 두면 좋다. touchesBegan(touches:, with:), touchesMoved(touched:, with:), touchedEnd
+
+* Target-Action 패턴을 이용해서 action을 보낼때 sendAction(for:controlEvent)라는 메서드를 활용하면 된다.
