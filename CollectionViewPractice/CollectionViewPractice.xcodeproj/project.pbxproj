@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A21B6171F86573E00034ADE /* FlickrPhotoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21B6161F86573E00034ADE /* FlickrPhotoHeaderView.swift */; };
 		5ADE9F021F6EDDC100386D6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE9F011F6EDDC100386D6A /* AppDelegate.swift */; };
 		5ADE9F071F6EDDC100386D6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE9F051F6EDDC100386D6A /* Main.storyboard */; };
 		5ADE9F091F6EDDC100386D6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE9F081F6EDDC100386D6A /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A21B6161F86573E00034ADE /* FlickrPhotoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoHeaderView.swift; sourceTree = "<group>"; };
 		5ADE9EFE1F6EDDC100386D6A /* CollectionViewPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADE9F011F6EDDC100386D6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ADE9F061F6EDDC100386D6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				5ADE9F1D1F6EF61E00386D6A /* FlickerPhotoCell.swift */,
 				5ADE9F191F6EE3D200386D6A /* FlickrSearchResults.swift */,
 				5ADE9F011F6EDDC100386D6A /* AppDelegate.swift */,
+				5A21B6161F86573E00034ADE /* FlickrPhotoHeaderView.swift */,
 				5ADE9F151F6EE01C00386D6A /* FilckerPhotosViewController.swift */,
 				5ADE9F051F6EDDC100386D6A /* Main.storyboard */,
 				5ADE9F081F6EDDC100386D6A /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A21B6171F86573E00034ADE /* FlickrPhotoHeaderView.swift in Sources */,
 				5ADE9F161F6EE01C00386D6A /* FilckerPhotosViewController.swift in Sources */,
 				5ADE9F1C1F6EE3D200386D6A /* FlickrSearchResults.swift in Sources */,
 				5ADE9F1B1F6EE3D200386D6A /* FlickrPhoto.swift in Sources */,
@@ -318,6 +322,7 @@
 				5ADE9F121F6EDDC100386D6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
