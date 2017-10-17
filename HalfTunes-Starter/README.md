@@ -23,3 +23,6 @@ URLSession - HTTP를 통해 content를 업로드, 다운로드 하기 위한 App
 
 > background 에서 다운로드 작업을 하기 위해서, URLSessionConfiguration.default 대신 init(withIdentifier:) 이니셜라이져로 새로운 URLSessionConfiguration을 생성해야 한다.
 필요한 경우 여기에 앱에서 새 백그라운드 세션을 만들수 있기 때문이다. 그리고 background configuration 에 하나 이상의 세션을 만들면 안된다, 시스템에서 configuration의 identifier를 사용하여 세션과 task를 연관시키기 때문이다. background 에서 작업이 완료되면 앱이 재시작 되는데 AppDelegate의 application(_:handleEventsForBackgroundURLSession:) 메서드가 앱을 깨우고, URLSessionDelegate 에서 인자로 넘어온 completionHandler를 처리할 수 있다.
+
+
+reference : https://www.raywenderlich.com/158106/urlsession-tutorial-getting-started
