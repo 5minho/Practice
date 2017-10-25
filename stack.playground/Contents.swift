@@ -41,6 +41,15 @@ extension Stack : CustomStringConvertible, CustomDebugStringConvertible {
     
 }
 
+// 배열처럼 스택을 초기화 하기 위해 ExpressibleByArrayLiteral 적용
+extension Stack : ExpressibleByArrayLiteral {
+    
+    init(arrayLiteral elements: T...) {
+        self.init(elements : elements)
+    }
+    
+}
+
 var stack = Stack<Int>()
 stack.push(element: 3)
 stack.push(element: 4)
@@ -49,6 +58,10 @@ stack.pop()
 stack.pop()
 stack.pop()
 stack.pop()
+
+var stackByArrayLiteral : Stack<Int> = [2,5,4]
+stackByArrayLiteral.push(element: 4)
+stackByArrayLiteral.pop()
 
 
 
