@@ -6,6 +6,20 @@ struct Stack<T> {
     
     private var elements = [T]()
     
+    // stack에 for..in 구문을 사용하기 위해 Sequence, IteratorProtocol을 적용
+    struct Iterator : IteratorProtocol {
+        var currentElement : [T]
+        
+        init(elements : [T]) {
+            currentElement = elements
+        }
+        
+        mutating func next() -> T? {
+            return currentElement.popLast()
+        }
+        
+    }
+    
     public mutating func pop() -> T? {
         return elements.popLast()
     }
@@ -50,6 +64,14 @@ extension Stack : ExpressibleByArrayLiteral {
     
 }
 
+
+// stack에 for..in 구문을 사용하기 위해 Sequence, IteratorProtocol을 적용
+extension Stack : Sequence {
+    func makeIterator() -> Stack<T>.Iterator {
+        return Stack<T>.Iterator(elements: self.elements)
+    }
+}
+
 var stack = Stack<Int>()
 stack.push(element: 3)
 stack.push(element: 4)
@@ -63,5 +85,8 @@ var stackByArrayLiteral : Stack<Int> = [2,5,4]
 stackByArrayLiteral.push(element: 4)
 stackByArrayLiteral.pop()
 
+for element in stackByArrayLiteral {
+    element
+}
 
 
