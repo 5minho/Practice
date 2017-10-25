@@ -28,6 +28,19 @@ struct Stack<T> {
     
 }
 
+// 타입 값을 출력할 때 좀 더 알아보기 쉬운 값으로 출력하기 위해 CustomStringConvertible, CustomDebugStringConvertible 적용
+extension Stack : CustomStringConvertible, CustomDebugStringConvertible {
+    
+    var description: String {
+        return self.elements.description
+    }
+    
+    var debugDescription: String {
+        return self.elements.debugDescription
+    }
+    
+}
+
 var stack = Stack<Int>()
 stack.push(element: 3)
 stack.push(element: 4)
