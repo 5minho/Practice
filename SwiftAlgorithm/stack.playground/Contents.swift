@@ -17,7 +17,11 @@ struct Stack<T> {
         mutating func next() -> T? {
             return currentElement.popLast()
         }
-        
+    }
+    
+    // 또 다른 스택으로 초기화 하기 위한 이니셜라이져
+    public init<S : Sequence>(_ s : S) where S.Iterator.Element == T {
+        self.elements = Array(s.reversed())
     }
     
     public mutating func pop() -> T? {
@@ -59,7 +63,7 @@ extension Stack : CustomStringConvertible, CustomDebugStringConvertible {
 extension Stack : ExpressibleByArrayLiteral {
     
     init(arrayLiteral elements: T...) {
-        self.init(elements : elements)
+        self.init(elements)
     }
     
 }
@@ -84,6 +88,11 @@ stack.pop()
 var stackByArrayLiteral : Stack<Int> = [2,5,4]
 stackByArrayLiteral.push(element: 4)
 stackByArrayLiteral.pop()
+
+var otherStack = Stack<Int>(stackByArrayLiteral)
+
+otherStack.pop()
+
 
 for element in stackByArrayLiteral {
     element
