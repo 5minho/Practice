@@ -28,6 +28,7 @@ struct CircularBuffer<T> {
     fileprivate var head = 0, tail = 0
     fileprivate var internalCount = 0
     
+    
     fileprivate var overwriteOperation : OverwriteOperation = .overwrite
     
     //MARK: computed property
@@ -101,7 +102,7 @@ struct CircularBuffer<T> {
         }
         
         tail = increament(pointer: tail)
-        internalCount -= 1
+        internalCount += 1
         
     }
     
@@ -154,10 +155,42 @@ struct CircularBuffer<T> {
     
     /// 내부 포인터 값을 1씩 증가 시킨다.
     /// 증가된 값이 배열의 마지막 요소를 넘을 경우를 대비함
-    /// - Parameter pointer: 증가된 포인터
-    /// - Returns: <#return value description#>
+    /// - Parameter pointer: 증가할 포인터
+    /// - Returns: 증가된 포인터
     fileprivate func increament(pointer : Int) -> Int {
         return (pointer + 1) & (data.capacity - 1)
+    }
+    
+}
+
+extension CircularBuffer : Sequence {
+    
+    func makeIterator() -> AnyIterator<T> {
+        var newData = [T]()
+        
+        if count > 0 {
+            if head > tail {
+                newData = [T](repeatElement(data[head], count: count))
+                let front = data.capacity - head
+                newData[0 ..< front] = data[head ..< data.capacity]
+                if front < count {
+                    newData[front + 1 ..< newData.capacity] = data[0 ..< count - front]
+                }
+            } else {
+                newData[0 ..< tail - head] = data[head ..< tail]
+            }
+        }
+        
+        return AnyIterator(IndexingIterator(_elements: newData.lazy))
+    }
+    
+}
+
+extension CircularBuffer : ExpressibleByArrayLiteral {
+    typealias ArrayLiteralElement = T
+    
+    init(arrayLiteral elements: T...) {
+        self.init(elements, size: elements.count)
     }
     
 }
