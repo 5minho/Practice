@@ -25,4 +25,4 @@
 
 6. UIKit이 animation controller의 animateTransition(_:) 메서드를 호출해 화면전환 애니메이션을 수행한다.
 
-7. 마지막으로 animation controller는 animation이 끝났음을 알리기 위해  transitioning context 상에서 completeTransition(_:) 메서드를 호출한다. 
+7. 마지막으로 animation controller는 animation이 끝났음을 알리기 위해  transitioning context 상에서 completeTransition(_:) 메서드를 호출한다.
