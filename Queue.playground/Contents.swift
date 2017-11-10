@@ -101,8 +101,37 @@ extension Queue : CustomDebugStringConvertible, CustomStringConvertible {
     
 }
 
+extension Queue : MutableCollection {
+    public var startIndex: Queue<T>.Index {
+        return 0
+    }
+    
+    public var endIndex: Queue<T>.Index {
+        return count - 1
+    }
+    
+    public subscript(position: Int) -> MutableSlice<Queue<T>> {
+        get {
+            <#code#>
+        }
+        set(newValue) {
+            <#code#>
+        }
+    }
+    
+    public subscript(position: Int) -> MutableSlice<Queue<T>> {
+        return element`
+    }
 
-
+    public subscript(index : Int) -> T {
+        get {
+            return elements[index]
+        }
+        set {
+            elements[index] = newValue
+        }
+    }
+}
 
 var queue = Queue<Int>()
 queue.capacity = 100
