@@ -2,8 +2,7 @@
 
 
 Cocoa Touch에서 App이 시작 할 때 UIApplication은 Main Thread에서 만들어진다.
-화면상 모든 뷰들 (label, button 등등)은 UIApplication 인스턴스의 자손들이다.
-button을 탭 하거나 button을 이용해 어떤 작업을 할 때, 화면 업데이트는 Main Thread 위에서 실행되어야 한다, button, label 이런 UIApplication의 자손 객체가 Main Thread의 일부이기 때문이다.
+화면상 모든 뷰들 (label, button 등등)은 UIApplication 인스턴스의 자손들이다. (<- 이 문장에 대한 이해가 더 필요함) button을 탭 하거나 button을 이용해 어떤 작업을 할 때, 화면 업데이트는 Main Thread 위에서 실행되어야 한다, button, label 이런 UIApplication의 자손 객체가 Main Thread의 일부이기 때문이다.
 마찬가지로 pinch 같이 button, label 등에서 비롯된 event들은 Main Thread의 일부이기 때문에 Main Thread 위에서 처리되어야 한다.
 
 또 다른 이유는 Graphic rendering 때문인데 iPhone의 그래픽 파이프라인이 동기식이기 때문이다.
