@@ -16,7 +16,7 @@ class FilckerPhotosViewController: UICollectionViewController {
     fileprivate var searches = [FlickrSearchResults]()
     fileprivate let flicker = Flickr()
     
-    fileprivate let itemsPerRow : CGFloat = 1
+    fileprivate let itemsPerRow : CGFloat = 3
     
 }
 
@@ -37,6 +37,23 @@ extension FilckerPhotosViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searches[section].searchResults.count
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: "FlickrPhotoHeaderView",
+                                                                             for: indexPath) as! FlickrPhotoHeaderView
+            
+            headerView.title.text = searches[indexPath.section].searchTerm
+            return headerView
+        default:
+            assert(false)
+        }
+        
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         

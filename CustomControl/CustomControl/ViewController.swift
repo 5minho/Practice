@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var slider : UISlider!
     @IBOutlet var button : UIButton!
     @IBOutlet var animateSwitch : UISwitch!
+    @IBOutlet var valueLabel : UILabel!
     
     var knob : Knob!
     

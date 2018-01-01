@@ -8,8 +8,8 @@
 
 import UIKit
 
+
 class Knob: UIControl {
-    
     
     
     private var backingValue : Float = 0.0
@@ -109,7 +109,28 @@ class Knob: UIControl {
         get { return knobRenderer.pointerLength }
         set { knobRenderer.pointerLength = newValue }
     }
+    
 
+    private class RotationGestureRecognizer : UIPanGestureRecognizer {
+        
+        var rotation : CGFloat = 0.0
+   
+        func updateRotationWithTouches(touches: Set<NSObject>) {
+            if let touch = touches[touches.startIndex] as? UITouch {
+                self.rotation = rotationForLocation(touch.locationInView(self.view))
+            }
+        }
+        
+        func rotationForLocation(location: CGPoint) -> CGFloat {
+            let offset = CGPoint(x: location.x - view!.bounds.midX, y: location.y - view!.bounds.midY)
+            return atan2(offset.y, offset.x)
+        }
+        
+    }
+    override func sendActions(for controlEvents: UIControlEvents) {
+        <#code#>
+    }
+    
     private class KnobRenderer {
         
         let trackLayer = CAShapeLayer()

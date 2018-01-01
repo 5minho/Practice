@@ -10,3 +10,8 @@ let reversedSlice = slice.reversed()
 let answer = reversedSlice.map{$0 * 10}
 print(answer)
  ```
+
+ 위의 코드에서 slice 는 Array<Int> 타입이 아닌 **ArraySlice<Int>** 이다.
+ 이런 __wrapper type__ 은 원래 배열의 view 처럼 작동한다. 이는 값 비싼 메모리 할당을 피할 수 있다.
+
+ 마찬가지로 reversedSlice 도  __ReversedRandomAccessCollection<ArraySlice<Int>>__ 이고 원래 배열의 __wrapper type__ 이다.
