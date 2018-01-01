@@ -4,7 +4,7 @@ https://www.raywenderlich.com/164608/uicollectionview-custom-layout-tutorial-pin
 
 기본 UICollectionViewLayout 을 이용해서 격자모양으로 구현한 갤러리 이다. 괜찮아 보이지만, 사진들이 완전히 보이지 않고 사진의 대한 글들이 잘려있다. 이 문제들은 collection view의 custom layout을 통해 해결할 수 있다.
 
-Collection view layout 은 UICollectionViewLayout 의 서브클래스 이고, Collection view 의 모든 아이템드르이 비쥬얼 속성으로 정의 되어 있다. 그 아이템 하나하나의 속성들은 UICollectionViewLayoutAttributes 의 인스턴스 이고, frame과 transform 같은 collection view item 의 속성들로 이루어져 있다.
+Collection view layout 객체는 UICollectionViewLayout 의 서브클래스 이고, Collection View 의 모든 cell들의 비쥬얼적인 속성으로 정의 되어 있다. 그 아이템 하나하나의 속성들은 UICollectionViewLayoutAttributes 의 인스턴스 이고, frame과 transform 같은 collection view item 의 속성들로 이루어져 있다.
 
 ### Core Layout Process
 
